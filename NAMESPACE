@@ -1,0 +1,4 @@
+useDynLib(TreeGuidedRegression)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)
+importFrom("utils", "find")

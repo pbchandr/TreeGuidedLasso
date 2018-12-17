@@ -1,0 +1,11 @@
+Package: TreeGuidedRegression
+Type: Package
+Title: Tree Guided Regression
+Version: 1.0
+Date: 2018-12-17
+Author: Pramod Bharadwaj Chandrashekar
+Maintainer: Your Name <pbchandr@asu.edu>
+Description: Tool for tree guided regression analysis with lasso constraints.
+License: GPL (>= 2)
+Imports: Rcpp (>= 1.0.0)
+LinkingTo: Rcpp
