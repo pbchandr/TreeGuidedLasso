@@ -103,7 +103,6 @@ treeLinearLasso <- function(A, y, z, opts) {
 # Starting Point Initialization ----------------------------------------------------------------------------------
   # compute AT y
     if (opts[["nFlag"]] ==0) {
-      print("nFlag = 0")
       ATy <- t(A)%*%y
     } else if(opts[["nFlag"]] ==1){
       ATy <- t(A)%*%y - sum(y)*t(mu)
@@ -131,7 +130,6 @@ treeLinearLasso <- function(A, y, z, opts) {
           
           lambda_max <- general_findLambdaMax(ATy, n, ind, ncol(ind))
         }
-        print(lambda_max)
         lambda <- z*lambda_max
       }
     }
