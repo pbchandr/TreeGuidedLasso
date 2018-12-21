@@ -182,9 +182,9 @@ treeLinearLasso <- function(A, y, z, opts) {
       Ax <- Ax./nu
     }
     
-    if(opts[["init"]] == 0) {
-      x <- matrix(0, n, 1)
-    }
+    # if(opts[["init"]] == 0) {
+    #   x <- matrix(0, n, 1)
+    # }
     
   
 # The Armijo Goldstein line search scheme + accelearted gradient descent -----------------------------------------
@@ -264,7 +264,6 @@ treeLinearLasso <- function(A, y, z, opts) {
     valueL <- c(valueL, L)
     
     # Step 3 - Update alpha and alphap and check for convergence
-    s3_st <- as.numeric(as.numeric(Sys.time())*1000, digits=15)
     alphap <- alpha
     alpha <- (1+ sqrt(4*alpha*alpha +1))/2
     xxp <- x - xp
@@ -325,7 +324,7 @@ treeLinearLasso <- function(A, y, z, opts) {
             },
             
             {
-              if (iterStep >= opts$maxIter) {
+              if ((iterStep >= opts$maxIter) | (abs(funVal(iterStep) - funVal(iterStep-1) ) <= opts$tol)) {
                 break
               }
             }
